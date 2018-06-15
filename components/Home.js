@@ -4,7 +4,7 @@ import { createStackNavigator } from 'react-navigation';
 
 const Home = ({ navigation }) => (
   <View style={styles.container}>
-    <Text>Check out my Home Screen!</Text>
+    <Text>Sup marino!</Text>
     <Button onPress={() => navigation.navigate('Map')} title="View Map" />
   </View>
 );
