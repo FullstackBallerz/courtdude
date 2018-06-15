@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
-
 import { MapView } from 'expo';
+import { Marker } from 'react-native-maps';
 
 const BallerMap = () => {
   return (
