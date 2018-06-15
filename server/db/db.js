@@ -6,7 +6,7 @@ const chalk = require('chalk');
 
 console.log(chalk.green('Opening database connection'));
 
-const db = new Sequelize(`postgres://localhost:5432/ballz`, {
+const db = new Sequelize(`postgres://localhost:5432/ballerStack`, {
   logging: false
 });
 
