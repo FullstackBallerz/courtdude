@@ -3,8 +3,11 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import { MapView } from 'expo';
 import { Marker } from 'react-native-maps';
+import { connect } from 'react-redux';
+import { withRouter, Link } from 'react-router-dom';
+import { getCourts } from '../store/allCourts';
 
-const BallerMap = () => {
+const CourtMap = () => {
   return (
     <MapView
       style={{
@@ -20,4 +23,23 @@ const BallerMap = () => {
   );
 };
 
-export default BallerMap;
+const mapSTP = state => {
+  return {
+    courts: state.allCourts.courts
+  };
+};
+
+const mapDTP = dispatch => {
+  return {
+    getCourts: () => dispatch(getCourts())
+  };
+};
+
+export default withRouter(
+  connect(
+    mapSTP,
+    mapDTP
+  )(CourtMap)
+);
+
+// export default CourtMap;
