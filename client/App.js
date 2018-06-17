@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import Home from './components/Home';
-import BallerMap from './components/Map';
+import CourtMap from './components/Map';
 
 const RootNavigator = createStackNavigator({
   Main: {
@@ -12,9 +12,9 @@ const RootNavigator = createStackNavigator({
     }
   },
   Map: {
-    screen: BallerMap,
+    screen: CourtMap,
     navigationOptions: {
-      headerTitle: 'Baller Map'
+      headerTitle: 'Court Map'
     }
   }
 });
