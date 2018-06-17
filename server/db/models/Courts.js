@@ -7,7 +7,8 @@ const Court = db.define('court', {
     allowNull: true
   },
   coordinates: {
-    type: Sequelize.ARRAY(Sequelize.STRING)
+    type: Sequelize.ARRAY(Sequelize.STRING),
+    allowNull: true
   },
   custom: {
     type: Sequelize.BOOLEAN,

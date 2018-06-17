@@ -27,11 +27,12 @@ class CourtMap extends Component {
         }}
       >
         {allCourts.map(court => (
-          <Marker
+          <Marker 
+            key={court.id}
             title={court.name}
             coordinate={{
-              latitude: court.coordinates[0],
-              longitude: court.coordinates[1]
+              latitude: Number(court.coordinates[0]),
+              longitude: Number(court.coordinates[1])
             }}
           />
         ))}
