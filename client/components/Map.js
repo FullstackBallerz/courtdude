@@ -7,39 +7,54 @@ import { connect, Provider } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 import { getCourts } from '../store/allCourts';
 
-// class CourtMap extends Component {
-//   render() {
-//     return (
-//       <MapView
-//         style={{
-//           flex: 1
-//         }}
-//         initialRegion={{
-//           latitude: 40.7831,
-//           longitude: -73.9851,
-//           latitudeDelta: 0.0922,
-//           longitudeDelta: 0.0421
-//         }}
-//       />
-//     );
-//   }
-// }
+class CourtMap extends Component {
+  componentDidMount() {
+    this.props.getCourts();
+  }
 
-const CourtMap = () => {
-  return (
-    <MapView
-      style={{
-        flex: 1
-      }}
-      initialRegion={{
-        latitude: 40.7831,
-        longitude: -73.9851,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421
-      }}
-    />
-  );
-};
+  render() {
+    const allCourts = this.props.courts;
+    return (
+      <MapView
+        style={{
+          flex: 1
+        }}
+        initialRegion={{
+          latitude: 40.7831,
+          longitude: -73.9851,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421
+        }}
+      >
+        {allCourts.map(court => (
+          <Marker
+            title={court.name}
+            coordinate={{
+              latitude: court.coordinates[0],
+              longitude: court.coordinates[1]
+            }}
+          />
+        ))}
+      </MapView>
+    );
+  }
+}
+
+// const CourtMap = () => {
+//   return (
+//     <MapView
+//       style={{
+//         flex: 1
+//       }}
+//       initialRegion={{
+//         latitude: 40.7831,
+//         longitude: -73.9851,
+//         latitudeDelta: 0.0922,
+//         longitudeDelta: 0.0421
+//       }}
+//     />
+//   );
+// };
 
 const mapSTP = state => {
   return {

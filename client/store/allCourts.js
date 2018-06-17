@@ -9,8 +9,14 @@ export const gotCourts = courts => ({
 
 export const getCourts = () => {
   return async dispatch => {
-    const courts = await axios.get('/courts');
-    dispatch(gotCourts);
+    try {
+      console.log('hello');
+      const { data } = await axios.get('/api/courts');
+      console.log('HELOLOOOO: ', data);
+      dispatch(gotCourts(data));
+    } catch (err) {
+      console.log(err);
+    }
   };
 };
 
