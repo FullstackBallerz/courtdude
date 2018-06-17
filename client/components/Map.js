@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import { MapView } from 'expo';
 import { Marker } from 'react-native-maps';
-import { connect } from 'react-redux';
+import { connect, Provider } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 import { getCourts } from '../store/allCourts';
 
@@ -53,9 +53,9 @@ const mapDTP = dispatch => {
   };
 };
 
-// export default connect(
-//   mapSTP,
-//   mapDTP
-// )(CourtMap);
+export default connect(
+  mapSTP,
+  mapDTP
+)(CourtMap);
 
-export default CourtMap;
+// export default CourtMap;

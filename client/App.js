@@ -3,6 +3,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import Home from './components/Home';
 import CourtMap from './components/Map';
+import store from './store';
+import { connect, Provider } from 'react-redux';
+import { createStore, bindActionCreators } from 'redux';
 
 const RootNavigator = createStackNavigator({
   Main: {
@@ -19,7 +22,23 @@ const RootNavigator = createStackNavigator({
   }
 });
 
-export default RootNavigator;
+// export default RootNavigator;
+
+function mapStateToProps(state) {
+  return state;
+}
+
+let Container = connect(mapStateToProps)(RootNavigator);
+
+export default class APP extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <Container />
+      </Provider>
+    );
+  }
+}
 
 // export default class App extends Component {
 //   render() {
