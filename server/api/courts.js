@@ -6,7 +6,7 @@ module.exports = router;
 
 router.get('/', async (req, res, next) => {
   try {
-    const courts = await Court.findAll({ include: [User] });
+    const courts = await Court.findAll();
     res.json(courts);
   } catch (err) {
     next(err);

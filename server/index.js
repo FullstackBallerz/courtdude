@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-const PORT = 8080;
+const PORT = 1337;
 const app = express();
 
 module.exports = app;
