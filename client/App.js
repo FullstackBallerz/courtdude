@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import Login from './components/Login/Login'
+import LoginForm from './components/Login/LoginForm'
 import Home from './components/Home';
-import CourtMap from './components/Map';
+import Map from './components/Map';
 import store from './store';
 import { connect, Provider } from 'react-redux';
 import { createStore, bindActionCreators } from 'redux';
@@ -15,14 +16,8 @@ const RootNavigator = createStackNavigator({
       headerTitle: 'Login Page'
     }
   },
-  Main: {
-    screen: Home,
-    navigationOptions: {
-      headerTitle: 'Home'
-    }
-  },
   Map: {
-    screen: CourtMap,
+    screen: Map,
     navigationOptions: {
       headerTitle: 'Court Map'
     }
@@ -35,13 +30,13 @@ function mapStateToProps(state) {
   return state;
 }
 
-let Container = connect(mapStateToProps)(RootNavigator);
+let Nav = connect(mapStateToProps)(RootNavigator);
 
-export default class APP extends Component {
+export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Container />
+        <Nav/>
       </Provider>
     );
   }

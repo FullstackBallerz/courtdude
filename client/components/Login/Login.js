@@ -10,13 +10,13 @@ export default class Login extends Component {
                 <View style={styles.logoContainer}>
                     <Image
                         style={styles.logo}
-                        source={require('./player-logo.png')}
+                        source={require('./kuroko-logo.png')}
                     />
                     <Text style={styles.title}>CourtDude</Text>
-                    <Text style={styles.subtext}>Sign up or Login!</Text>
+                    <Text style={styles.subtext}>Find a court near you!</Text>
                 </View>
                     <View style={styles.formContainer}>
-                        <LoginForm />
+                        <LoginForm nav={this.props}/>
                     </View>
                 </View>
             </KeyboardAvoidingView>
@@ -40,16 +40,15 @@ const styles = StyleSheet.create({
     },
     title: {
         color: 'white',
-        fontSize: 40,
-        fontWeight: 'bold',
+        fontFamily: 'AppleSDGothicNeo-Bold',
+        fontSize: 50,
         marginTop: 10,
         width: 300,
         textAlign: 'center',
-        opacity: 0.9
     },
     subtext: {
         color: 'white',
-        fontSize: 20,
-        opacity: 0.9
+        fontFamily: 'AppleSDGothicNeo-Regular',
+        fontSize: 25,
     }
 })

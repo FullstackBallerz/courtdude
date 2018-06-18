@@ -6,11 +6,17 @@ const ip = manifest.packagerOpts.dev
   : `localhost:1337`;
 
 const GOT_COURTS = 'GOT_COURTS';
+const GOT_USER = 'GOT_USER'
 
 export const gotCourts = courts => ({
   type: GOT_COURTS,
   courts
 });
+
+export const gotUser = user => ({
+  type: GOT_USER,
+  user
+})
 
 export const getCourts = () => {
   return async dispatch => {
@@ -24,8 +30,23 @@ export const getCourts = () => {
   };
 };
 
+export const getUser = (userInfo) => {
+  return async dispatch => {
+    try {
+      console.log("1!!!!!", userInfo)
+      const { data } = await axios.post(`http://${ip}/api/users`, userInfo)
+      console.log("this is the data! ",data)
+      dispatch(gotUser(data))
+      
+    } catch (err) {
+      console.log(err)
+    }
+  }
+}
+
 const initialState = {
-  courts: []
+  courts: [],
+  user: {}
 };
 
 const courtReducer = (state = initialState, action) => {
@@ -35,6 +56,12 @@ const courtReducer = (state = initialState, action) => {
         ...state,
         courts: action.courts
       };
+
+    case GOT_USER:
+      return {
+        ...state,
+        user: action.user
+      }
     default:
       return state;
   }
