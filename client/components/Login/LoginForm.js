@@ -12,16 +12,21 @@ class LoginForm extends Component {
             email: '',
             password: ''
         }
-    this.handlePress = this.handlePress.bind(this)
+    this.handleLogin = this.handleLogin.bind(this)
+    this.handleCreateAccount = this.handleCreateAccount.bind(this)
     }
 
-    handlePress() {
+    handleLogin() {
         const user = {
             email: this.state.email,
             password: this.state.password
         }
         this.props.getUser(user)
         this.props.nav.navigation.navigate('Map')
+    }
+
+    handleCreateAccount() {
+        this.props.nav.navigation.navigate('CreateAccount')
     }
 
     render() {
@@ -43,10 +48,10 @@ class LoginForm extends Component {
                     onChangeText={(password) => this.setState({password})}
                     value={this.state.password}
                 />
-                <TouchableOpacity style={styles.loginContainer} onPress={this.handlePress}>
+                <TouchableOpacity style={styles.loginContainer} onPress={this.handleLogin}>
                     <Text style={styles.buttonText}>LOGIN</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.createaccountContainer}>
+                <TouchableOpacity style={styles.createaccountContainer} onPress={this.handleCreateAccount}>
                     <Text style={styles.buttonText}>Create Account</Text>
                 </TouchableOpacity>
             </View>

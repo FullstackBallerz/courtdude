@@ -6,17 +6,17 @@ export default class Login extends Component {
     render() {
         return (
             <KeyboardAvoidingView behavior="padding" style={styles.container}>
-            <View style={styles.container}>
-                <View style={styles.logoContainer}>
-                    <Image
-                        style={styles.logo}
-                        source={require('./kuroko-logo.png')}
-                    />
-                    <Text style={styles.title}>CourtDude</Text>
-                    <Text style={styles.subtext}>Find a court near you!</Text>
-                </View>
+                <View style={styles.container}>
+                    <View style={styles.logoContainer}>
+                        <Image
+                            style={styles.logo}
+                            source={require('./kuroko-logo.png')}
+                        />
+                        <Text style={styles.title}>CourtDude</Text>
+                        <Text style={styles.subtext}>Find a court near you!</Text>
+                    </View>
                     <View style={styles.formContainer}>
-                        <LoginForm nav={this.props}/>
+                        <LoginForm nav={this.props} />
                     </View>
                 </View>
             </KeyboardAvoidingView>
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     title: {
         color: 'white',
         fontFamily: 'AppleSDGothicNeo-Bold',
-        fontSize: 50,
+        fontSize: 60,
         marginTop: 10,
         width: 300,
         textAlign: 'center',

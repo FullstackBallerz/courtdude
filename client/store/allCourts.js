@@ -21,7 +21,6 @@ export const gotUser = user => ({
 export const getCourts = () => {
   return async dispatch => {
     try {
-      console.log('hello');
       const { data } = await axios.get(`http://${ip}/api/courts`);
       dispatch(gotCourts(data));
     } catch (err) {
@@ -33,9 +32,7 @@ export const getCourts = () => {
 export const getUser = (userInfo) => {
   return async dispatch => {
     try {
-      console.log("1!!!!!", userInfo)
       const { data } = await axios.post(`http://${ip}/api/users`, userInfo)
-      console.log("this is the data! ",data)
       dispatch(gotUser(data))
       
     } catch (err) {

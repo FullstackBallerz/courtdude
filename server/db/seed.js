@@ -7,7 +7,7 @@ const users = [
   {
     email: 'iverson@gmail.com',
     password: 'theanswer',
-    Alias: 'The Answer',
+    username: 'The Answer',
     firstName: 'Allen',
     lastName: 'Iverson',
     age: 43,
@@ -17,7 +17,7 @@ const users = [
   {
     email: 'yao@gmail.com',
     password: 'chinatown',
-    Alias: 'Yao',
+    username: 'Yao',
     firstName: 'Yao',
     lastName: 'Ming',
     age: 37,
@@ -27,7 +27,7 @@ const users = [
   {
     email: 'joe@gmail.com',
     password: 'joeballer',
-    Alias: 'Cup of Joe',
+    username: 'Cup of Joe',
     firstName: 'Joe',
     lastName: 'Kang',
     age: 22,

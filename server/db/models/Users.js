@@ -10,7 +10,7 @@ const User = db.define('user', {
     type: Sequelize.STRING,
     allowNull: false
   },
-  Alias: {
+  username: {
     type: Sequelize.STRING,
     allowNull: false,
     unique: true

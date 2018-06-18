@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
 import Login from './components/Login/Login'
 import LoginForm from './components/Login/LoginForm'
+import CreateAccount from './components/Login/CreateAccount'
 import Home from './components/Home';
 import Map from './components/Map';
 import store from './store';
@@ -16,6 +17,12 @@ const RootNavigator = createStackNavigator({
       headerTitle: 'Login Page'
     }
   },
+  CreateAccount: {
+    screen: CreateAccount,
+    navigationOptions: {
+      headerTitle: 'Create Account'
+    }
+  },
   Map: {
     screen: Map,
     navigationOptions: {
@@ -24,13 +31,11 @@ const RootNavigator = createStackNavigator({
   }
 });
 
-// export default RootNavigator;
-
 function mapStateToProps(state) {
   return state;
 }
 
-let Nav = connect(mapStateToProps)(RootNavigator);
+const Nav = connect(mapStateToProps)(RootNavigator);
 
 export default class App extends Component {
   render() {
@@ -41,24 +46,3 @@ export default class App extends Component {
     );
   }
 }
-
-// export default class App extends Component {
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <Text>Open up App.js to working on your app!</Text>
-//         <Text>Chanou make will automatically.</Text>
-//         <Text>Shake your phone to open the developer menu.</Text>
-//       </View>
-//     );
-//   }
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center'
-//   }
-// });

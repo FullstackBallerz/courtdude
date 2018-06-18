@@ -7,17 +7,17 @@ module.exports = router;
 router.post('/', async (req, res, next) => {
     try {
       const user = await User.findOne({
-          where: {
-              email: req.body.email,
-              password: req.body.password
+        where: {
+            email: req.body.email,
+            password: req.body.password
         }
       });
-
-      console.log('USERRRR! ', user)
       if (!user) {
-          res.status(401).send('Wrong username and/or password')
+        res.status(401).send('Wrong username and/or password')
       }
-      res.json(user);
+      else {
+        res.json(user);
+      }
     } catch (err) {
       next(err);
     }

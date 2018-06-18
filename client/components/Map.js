@@ -5,7 +5,7 @@ import { MapView } from 'expo';
 import { Marker } from 'react-native-maps';
 import { connect, Provider } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
-import { getCourts } from '../store/allCourts';
+import { getCourts, getUser } from '../store/allCourts';
 
 class CourtMap extends Component {
   componentDidMount() {
@@ -30,6 +30,7 @@ class CourtMap extends Component {
           <Marker 
             key={court.id}
             title={court.name}
+            description={`Hoopers at this court: ${this.props.user.username}`}
             coordinate={{
               latitude: Number(court.coordinates[0]),
               longitude: Number(court.coordinates[1])
@@ -64,13 +65,15 @@ class CourtMap extends Component {
 
 const mapSTP = state => {
   return {
-    courts: state.allCourts.courts
+    courts: state.allCourts.courts,
+    user: state.allCourts.user
   };
 };
 
 const mapDTP = dispatch => {
   return {
-    getCourts: () => dispatch(getCourts())
+    getCourts: () => dispatch(getCourts()),
+    getUser: () => dispatch(getUser())
   };
 };
 
