@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import { MapView } from 'expo';
 import { Marker } from 'react-native-maps';
@@ -34,7 +34,12 @@ class CourtMap extends Component {
               latitude: Number(court.coordinates[0]),
               longitude: Number(court.coordinates[1])
             }}
-          />
+          >
+            <Image
+              source={require('./court-icon.png')}
+              resizeMode='contain'
+            />
+          </Marker>
         ))}
       </MapView>
     );
