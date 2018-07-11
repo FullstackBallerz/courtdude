@@ -1,3 +1,31 @@
+### CourtDude
+
+CourtDude! Find and join courts in your area!
+
+## Built With
+
+* [React](https://reactjs.org/) - Front-end library
+* [React-Native](https://facebook.github.io/react-native/) - Framework for mobile development
+* [Redux](https://redux.js.org/) - State Management
+* [Express](https://expressjs.com/) -Routing/backend
+* [PostgreSQL](https://www.postgresql.org/) - Database
+* [Sequelize](http://docs.sequelizejs.com/) - ORM
+* [Expo](https://expo.io/) - React-Native toolchain
+* [Create React Native App](https://github.com/react-community/create-react-native-app) - React-Native boilermaker
+* [React Native Maps](https://github.com/react-community/react-native-maps) - MapView component
+* [NYC Directory of Basketball Courts](https://data.cityofnewyork.us/Recreation/Directory-of-Basketball-Courts/b937-zdky) - JSON of courts in NY metro area
+
+## Authors
+
+* **Sean Lee** - [https://github.com/seanslee92](https://github.com/seanslee92)
+* **Daniel Kim** - [https://github.com/danielkjm](https://github.com/danielkjm)
+
+## Acknowledgments
+
+* [Fullstack Academy](https://www.fullstackacademy.com/) 2018
+* Stackathon Project by the "Fullstack Ballerz"
+* FSA-1804 NYC <3
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
