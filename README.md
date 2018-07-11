@@ -30,7 +30,7 @@ CourtDude! Find and join courts in your area!
 .
 .
 
-##Create React Native App
+## Create React Native App
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
