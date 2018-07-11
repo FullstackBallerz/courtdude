@@ -1,4 +1,4 @@
-### CourtDude
+# CourtDude
 
 CourtDude! Find and join courts in your area!
 
@@ -25,6 +25,12 @@ CourtDude! Find and join courts in your area!
 * [Fullstack Academy](https://www.fullstackacademy.com/) 2018
 * Stackathon Project by the "Fullstack Ballerz"
 * FSA-1804 NYC <3
+
+.
+.
+.
+
+##Create React Native App
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
